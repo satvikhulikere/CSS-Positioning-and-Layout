@@ -7,107 +7,121 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #ffffff;
 }
 
-/* 1. JUMP MENU: Left side, gold background, spans full height [cite: 6] */
+/* 1. JUMP MENU: Gold/Tan, full height */
 #jumpMenu {
     position: fixed;
     top: 0;
     left: 0;
-    width: 15%;           /* Using 15% width hint [cite: 13] */
-    height: 100%;         /* Requirement: Spans entire height [cite: 6] */
-    background-color: #d4af37; /* Gold/tan color from reference image  */
+    width: 15%;           /* Using 15% width hint */
+    height: 100%;         /* Requirement: Spans entire height */
+    background-color: #d4a76a; /* Gold/Tan from reference image */
     padding: 20px;
     border-right: 2px solid #000;
     overflow-y: auto;
-    z-index: 1001;        
+    z-index: 1001;
 }
 
 #jumpMenu h2 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 #jumpMenu a {
     display: block;
-    margin-bottom: 15px;
-    color: #0000ee;       /* Classic link blue */
+    margin-bottom: 20px;
+    color: #0000ee;
     font-weight: bold;
-    text-decoration: underline;
+    text-align: center;
 }
 
-/* 2 & 3. HEADER: Fixed top, blue background, centered correctly [cite: 7, 8] */
+/* 2 & 3. HEADER: Red top bar, Blue nav bar, Fixed & Centered */
 header {
     position: fixed;
     top: 0;
-    left: 15%;            /* Starts after the 15% wide menu [cite: 8] */
-    width: 85%;           /* Fills the remaining 85% of screen [cite: 13] */
-    height: 100px;
-    background-color: #0000ff; /* Bright blue from reference image [cite: 16] */
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center;  /* Center content within the 85% area [cite: 8] */
+    left: 15%;            /* Starts after jump menu */
+    width: 85%;           /* Remaining width */
     z-index: 1000;
     border-bottom: 2px solid #000;
 }
 
+/* Red section for MyBlog.com */
 header p {
+    background-color: #ff4d4d; /* Red background from image */
+    color: black;              /* Black text requirement */
     font-size: 1.5rem;
     font-weight: bold;
-    margin-bottom: 10px;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0;
+    border-bottom: 2px solid #000;
+}
+
+/* Blue section for buttons */
+header nav {
+    background-color: #0000ff; /* Bright blue from image */
+    display: flex;
+    justify-content: space-around; /* Spreads buttons evenly */
+    padding: 10px 0;
 }
 
 header nav button {
-    margin: 0 10px;
-    padding: 5px 15px;
+    background-color: transparent;
+    color: white;              /* White text requirement */
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
 }
 
-/* MAIN CONTENT ADJUSTMENT */
+/* MAIN CONTENT AREA */
 main {
-    margin-left: 15%;     /* Push right to clear jump menu [cite: 6] */
-    padding-top: 120px;   /* Push down to clear fixed header [cite: 7] */
-    padding-right: 20px;
+    margin-left: 15%;     /* Clears jump menu */
+    padding-top: 130px;   /* Clears fixed double-header */
     padding-left: 20px;
+    padding-right: 20px;
 }
 
 main h1 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    font-size: 2rem;
 }
 
-/* 5 & 6. ARTICLES: Grid layout with wrapping [cite: 10, 11] */
+/* 5 & 6. ARTICLES: Grid layout with wrapping */
 #container {
     display: flex;
-    flex-wrap: wrap;      /* Requirement: Reorganize on resize  */
+    flex-wrap: wrap;      /* Requirement: Reorganize on resize */
     justify-content: center;
-    gap: 30px;
+    gap: 40px;
 }
 
 article {
-    width: 300px;         /* Requirement: Fixed width hint [cite: 12] */
-    background-color: #fff;
-    padding: 15px;
-    border: 1px solid #ccc;
+    width: 300px;         /* Requirement: Fixed width hint */
+    line-height: 1.4;
 }
 
 article h2 {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-/* 4. THANK YOU BLOCK: Fixed bottom-right [cite: 9] */
+article a {
+    color: #0000ee;
+    text-decoration: underline;
+}
+
+/* 4. THANK YOU BLOCK: Light blue, thick border, bottom-right */
 #thanks {
-    position: fixed;      /* Requirement: Always shown [cite: 9] */
+    position: fixed;      /* Requirement: Always shown */
     bottom: 0;
     right: 0;
-    background-color: #add8e6; /* Light blue from reference image [cite: 16] */
+    background-color: #add8e6; /* Light blue from image */
     color: black;
     padding: 20px 40px;
-    border: 3px solid #000; /* Thick black border from image [cite: 16] */
-    font-weight: bold;
-    font-size: 1.2rem;
+    border: 3px solid #000;    /* Thick black border from image */
+    font-size: 1.8rem;
+    font-weight: normal;
     z-index: 2000;
 }
