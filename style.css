@@ -10,40 +10,54 @@ body {
     background-color: #ffffff;
 }
 
-/* 1. JUMP MENU: Left side, gold background, spans full height */
+/* 1. JUMP MENU: Left side, gold background, spans full height [cite: 6] */
 #jumpMenu {
     position: fixed;
     top: 0;
     left: 0;
-    width: 15%;           /* Hint requirement */
-    height: 100%;         /* Requirement: Spans entire height */
-    background-color: #c5a059; /* Matching the gold in screenshot */
+    width: 15%;           /* Using 15% width hint [cite: 13] */
+    height: 100%;         /* Requirement: Spans entire height [cite: 6] */
+    background-color: #d4af37; /* Gold/tan color from reference image  */
     padding: 20px;
     border-right: 2px solid #000;
     overflow-y: auto;
-    z-index: 1001;        /* Keeps it above the header */
+    z-index: 1001;        
+}
+
+#jumpMenu h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
 }
 
 #jumpMenu a {
     display: block;
     margin-bottom: 15px;
-    color: #0000ee;       /* Standard link blue */
+    color: #0000ee;       /* Classic link blue */
     font-weight: bold;
+    text-decoration: underline;
 }
 
-/* 2 & 3. HEADER: Fixed top, blue background, centered correctly */
+/* 2 & 3. HEADER: Fixed top, blue background, centered correctly [cite: 7, 8] */
 header {
     position: fixed;
     top: 0;
-    left: 15%;            /* Requirement: Accounts for menu width */
-    width: 85%;           /* Remaining width */
-    height: 80px;
-    background-color: #0000ff; /* Bright blue from screenshot */
+    left: 15%;            /* Starts after the 15% wide menu [cite: 8] */
+    width: 85%;           /* Fills the remaining 85% of screen [cite: 13] */
+    height: 100px;
+    background-color: #0000ff; /* Bright blue from reference image [cite: 16] */
     color: white;
     display: flex;
-    justify-content: center; /* Requirement: Centered appropriately */
-    align-items: center;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;  /* Center content within the 85% area [cite: 8] */
     z-index: 1000;
+    border-bottom: 2px solid #000;
+}
+
+header p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 header nav button {
@@ -52,11 +66,12 @@ header nav button {
     cursor: pointer;
 }
 
-/* MAIN CONTENT: Needs margins to clear the fixed menu and header */
+/* MAIN CONTENT ADJUSTMENT */
 main {
-    margin-left: 18%;     /* Clears jump menu + extra padding */
-    margin-top: 100px;    /* Clears fixed header */
-    padding: 20px;
+    margin-left: 15%;     /* Push right to clear jump menu [cite: 6] */
+    padding-top: 120px;   /* Push down to clear fixed header [cite: 7] */
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 main h1 {
@@ -64,31 +79,35 @@ main h1 {
     margin-bottom: 30px;
 }
 
-/* 5 & 6. ARTICLES: Grid/Flex layout with wrapping */
+/* 5 & 6. ARTICLES: Grid layout with wrapping [cite: 10, 11] */
 #container {
     display: flex;
-    flex-wrap: wrap;      /* Requirement: Reorganizes on resize */
-    gap: 40px;
-    justify-content: flex-start;
+    flex-wrap: wrap;      /* Requirement: Reorganize on resize  */
+    justify-content: center;
+    gap: 30px;
 }
 
 article {
-    width: 300px;         /* Hint requirement */
-    margin-bottom: 20px;
+    width: 300px;         /* Requirement: Fixed width hint [cite: 12] */
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ccc;
 }
 
 article h2 {
     margin-bottom: 10px;
 }
 
-/* 4. THANK YOU BLOCK: Fixed bottom-right */
+/* 4. THANK YOU BLOCK: Fixed bottom-right [cite: 9] */
 #thanks {
-    position: fixed;      /* Requirement: Always shown */
+    position: fixed;      /* Requirement: Always shown [cite: 9] */
     bottom: 0;
     right: 0;
-    background-color: #add8e6; /* Light blue from screenshot */
+    background-color: #add8e6; /* Light blue from reference image [cite: 16] */
+    color: black;
     padding: 20px 40px;
-    border: 2px solid #000;
-    font-size: 1.5rem;
+    border: 3px solid #000; /* Thick black border from image [cite: 16] */
+    font-weight: bold;
+    font-size: 1.2rem;
     z-index: 2000;
 }
