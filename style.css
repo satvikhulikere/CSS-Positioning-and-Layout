@@ -7,104 +7,104 @@
 
 body {
     font-family: Arial, sans-serif;
+    background-color: white;
 }
 
-/* 1. JUMP MENU: Gold/Tan, full height */
+/* 1. JUMP MENU: Gold background, full height [Requirement 1] */
 #jumpMenu {
     position: fixed;
     top: 0;
     left: 0;
-    width: 15%;           /* Using 15% width hint */
-    height: 100%;         /* Requirement: Spans entire height */
-    background-color: #d4a76a; /* Gold/Tan from reference image */
+    width: 15%;           /* Hint requirement */
+    height: 100%;         /* Spans entire height */
+    background-color: #d4a76a; /* Gold/Tan matching the reference image */
     padding: 20px;
-    border-right: 2px solid #000;
+    border-right: 2px solid black;
     overflow-y: auto;
     z-index: 1001;
 }
 
 #jumpMenu h2 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 20px;
     text-align: center;
 }
 
 #jumpMenu a {
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: #0000ee;
     font-weight: bold;
     text-align: center;
 }
 
-/* 2 & 3. HEADER: Red top bar, Blue nav bar, Fixed & Centered */
+/* 2 & 3. DUAL-LAYER HEADER: Always on top, centered area [Requirement 2 & 3] */
 header {
     position: fixed;
     top: 0;
     left: 15%;            /* Starts after jump menu */
     width: 85%;           /* Remaining width */
     z-index: 1000;
-    border-bottom: 2px solid #000;
 }
 
-/* Red section for MyBlog.com */
+/* Red Box with Black Text for "MyBlog.com" */
 header p {
-    background-color: #ff4d4d; /* Red background from image */
-    color: black;              /* Black text requirement */
+    background-color: #ff0000; /* Bright red */
+    color: black;              /* Black text per your feedback */
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
-    padding: 10px 0;
+    padding: 15px 0;
     margin: 0;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid black;
 }
 
-/* Blue section for buttons */
+/* Blue Box with White Text for Navigation */
 header nav {
-    background-color: #0000ff; /* Bright blue from image */
+    background-color: #0000ff; /* Bright blue */
     display: flex;
-    justify-content: space-around; /* Spreads buttons evenly */
+    justify-content: space-around;
     padding: 10px 0;
+    border-bottom: 2px solid black;
 }
 
 header nav button {
-    background-color: transparent;
-    color: white;              /* White text requirement */
+    background: transparent;
     border: none;
-    font-size: 1rem;
+    color: white;              /* White text per your feedback */
     font-weight: bold;
+    font-size: 1rem;
     cursor: pointer;
 }
 
-/* MAIN CONTENT AREA */
+/* MAIN CONTENT ADJUSTMENT */
 main {
     margin-left: 15%;     /* Clears jump menu */
-    padding-top: 130px;   /* Clears fixed double-header */
+    padding-top: 140px;   /* Clears both red and blue header bars */
     padding-left: 20px;
     padding-right: 20px;
 }
 
 main h1 {
     text-align: center;
-    margin-bottom: 40px;
-    font-size: 2rem;
+    margin: 20px 0 40px 0;
 }
 
-/* 5 & 6. ARTICLES: Grid layout with wrapping */
+/* 5 & 6. ARTICLES: Organized & Responsive [Requirement 5 & 6] */
 #container {
     display: flex;
-    flex-wrap: wrap;      /* Requirement: Reorganize on resize */
+    flex-wrap: wrap;      /* Reorganizes on resize */
     justify-content: center;
-    gap: 40px;
+    gap: 30px;
 }
 
 article {
-    width: 300px;         /* Requirement: Fixed width hint */
-    line-height: 1.4;
+    width: 300px;         /* Fixed width hint */
+    margin-bottom: 20px;
 }
 
 article h2 {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 article a {
@@ -112,16 +112,15 @@ article a {
     text-decoration: underline;
 }
 
-/* 4. THANK YOU BLOCK: Light blue, thick border, bottom-right */
+/* 4. THANK YOU BLOCK: Light Blue, thick border [Requirement 4] */
 #thanks {
-    position: fixed;      /* Requirement: Always shown */
+    position: fixed;
     bottom: 0;
     right: 0;
     background-color: #add8e6; /* Light blue from image */
-    color: black;
     padding: 20px 40px;
-    border: 3px solid #000;    /* Thick black border from image */
-    font-size: 1.8rem;
-    font-weight: normal;
+    border: 3px solid black;   /* Thick black border */
+    font-size: 1.5rem;
+    font-weight: bold;
     z-index: 2000;
 }
