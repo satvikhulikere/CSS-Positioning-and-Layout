@@ -61,17 +61,18 @@ header p {
 
 /* Blue Box with White Text for Navigation */
 header nav {
-    background-color: #0000ff; /* Bright blue */
+    background-color: #000000; /* Bright blue */
     display: flex;
     justify-content: space-around;
-    padding: 10px 0;
+    padding: 15px 0;
     border-bottom: 2px solid black;
 }
 
 header nav button {
-    background: transparent;
+    background-color: #0000ff    
     border: none;
-    color: white;              /* White text per your feedback */
+    color: white;
+    padding: 10px 30px;
     font-weight: bold;
     font-size: 1rem;
     cursor: pointer;
