@@ -1,4 +1,4 @@
-/* GLOBAL RESET & BASICS */
+/* GLOBAL RESET */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,147 +7,88 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    line-height: 1.6;
+    background-color: #ffffff;
 }
 
-/* 1. JUMP MENU: Positioned left, spans entire height [Requirement 1] */
+/* 1. JUMP MENU: Left side, gold background, spans full height */
 #jumpMenu {
     position: fixed;
     top: 0;
     left: 0;
-    width: 15%;          /* Width as suggested in Hints */
-    height: 100%;        /* Spans full height */
-    background-color: #2c3e50;
-    color: white;
+    width: 15%;           /* Hint requirement */
+    height: 100%;         /* Requirement: Spans entire height */
+    background-color: #c5a059; /* Matching the gold in screenshot */
     padding: 20px;
-    overflow-y: auto;    /* Adds scrollbar if menu items overflow */
-    border-right: 3px solid #000;
-}
-
-#jumpMenu h2 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #7f8c8d;
-    padding-bottom: 10px;
+    border-right: 2px solid #000;
+    overflow-y: auto;
+    z-index: 1001;        /* Keeps it above the header */
 }
 
 #jumpMenu a {
     display: block;
-    color: #ecf0f1;
-    text-decoration: none;
-    margin-bottom: 8px;
-    padding: 5px;
-    border-radius: 4px;
+    margin-bottom: 15px;
+    color: #0000ee;       /* Standard link blue */
+    font-weight: bold;
 }
 
-#jumpMenu a:hover {
-    background-color: #34495e;
-    color: #fff;
-}
-
-/* 2 & 3. HEADER: Always on top, centered properly [Requirement 2 & 3] */
+/* 2 & 3. HEADER: Fixed top, blue background, centered correctly */
 header {
     position: fixed;
     top: 0;
-    left: 15%;           /* Starts after the jump menu (15%) */
-    width: 85%;          /* Occupies the remaining width */
-    height: 100px;       /* Fixed height */
-    background-color: #2980b9;
+    left: 15%;            /* Requirement: Accounts for menu width */
+    width: 85%;           /* Remaining width */
+    height: 80px;
+    background-color: #0000ff; /* Bright blue from screenshot */
     color: white;
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Centers content horizontally (ignoring jump menu space) */
-    justify-content: center;
-    z-index: 1000;       /* Ensures it stays on top of scrolling articles */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-header p {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
+    justify-content: center; /* Requirement: Centered appropriately */
+    align-items: center;
+    z-index: 1000;
 }
 
 header nav button {
-    background-color: #fff;
-    border: none;
+    margin: 0 10px;
     padding: 5px 15px;
-    margin: 0 5px;
     cursor: pointer;
-    border-radius: 3px;
-    font-weight: bold;
-    color: #2980b9;
 }
 
-header nav button:hover {
-    background-color: #ecf0f1;
-}
-
-/* MAIN CONTENT ADJUSTMENT */
-/* We need to push the main content down and right so it isn't hidden behind the fixed header/menu */
+/* MAIN CONTENT: Needs margins to clear the fixed menu and header */
 main {
-    margin-left: 15%;    /* Push right to clear #jumpMenu */
-    padding-top: 120px;  /* Push down to clear fixed header (100px + 20px buffer) */
-    padding-right: 20px;
-    padding-left: 20px;
+    margin-left: 18%;     /* Clears jump menu + extra padding */
+    margin-top: 100px;    /* Clears fixed header */
+    padding: 20px;
 }
 
 main h1 {
     text-align: center;
-    margin-bottom: 20px;
-    color: #333;
+    margin-bottom: 30px;
 }
 
-/* 5 & 6. ARTICLES: Neat organization & resize handling [Requirement 5 & 6] */
+/* 5 & 6. ARTICLES: Grid/Flex layout with wrapping */
 #container {
-    display: flex;       /* Use Flexbox for layout */
-    flex-wrap: wrap;     /* Allows articles to wrap to next line on resize */
-    justify-content: space-around; /* Adds even spacing between items */
-    gap: 20px;           /* Modern spacing property */
+    display: flex;
+    flex-wrap: wrap;      /* Requirement: Reorganizes on resize */
+    gap: 40px;
+    justify-content: flex-start;
 }
 
-/* HINT: Fixed width for articles */
 article {
-    background-color: white;
-    width: 300px;        /* Fixed width as per Hint */
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 300px;         /* Hint requirement */
+    margin-bottom: 20px;
 }
 
 article h2 {
-    color: #e67e22;
     margin-bottom: 10px;
 }
 
-article a {
-    color: #2980b9;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* 4. THANK YOU BLOCK: Bottom-right [Requirement 4] */
+/* 4. THANK YOU BLOCK: Fixed bottom-right */
 #thanks {
-    position: fixed;
+    position: fixed;      /* Requirement: Always shown */
     bottom: 0;
     right: 0;
-    background-color: #f1c40f; /* Yellow for visibility */
-    color: #333;
-    padding: 10px 20px;
-    margin: 0;
-    font-weight: bold;
-    border-top-left-radius: 10px;
-    box-shadow: -2px -2px 5px rgba(0,0,0,0.2);
-    z-index: 2000;       /* On top of everything */
-}
-
-/* Footer Styling (Optional but keeps it neat) */
-footer {
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #ddd;
-    text-align: center;
-    border-radius: 8px;
+    background-color: #add8e6; /* Light blue from screenshot */
+    padding: 20px 40px;
+    border: 2px solid #000;
+    font-size: 1.5rem;
+    z-index: 2000;
 }
