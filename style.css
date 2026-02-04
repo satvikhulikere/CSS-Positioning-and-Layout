@@ -17,7 +17,7 @@ body {
     left: 0;
     width: 15%;           /* Hint requirement */
     height: 100%;         /* Spans entire height */
-    background-color: #d4a76a; /* Gold/Tan matching the reference image */
+    background-color: #daa520; /* Gold/Tan matching the reference image */
     padding: 20px;
     border-right: 2px solid black;
     overflow-y: auto;
@@ -69,7 +69,7 @@ header nav {
 }
 
 header nav button {
-    background-color: #0000ff    
+    background-color: #0000ff 
     border: none;
     color: white;
     padding: 10px 30px;
