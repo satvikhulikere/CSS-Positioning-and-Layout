@@ -61,7 +61,7 @@ header p {
 
 /* Blue Box with White Text for Navigation */
 header nav {
-    background-color: #000000; /* Bright blue */
+    background-color: #0000ff; /* Bright blue */
     display: flex;
     justify-content: space-around;
     padding: 15px 0;
